@@ -7,11 +7,12 @@ namespace ASPTryParsing.Controllers
 {
     public class SportController : Controller
     {
+
         public IActionResult Index()
         {
             ServicePointManager.Expect100Continue = true;
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-            List<Job> jobs = new List<Job>();
+            List<News> jobs = new List<News>();
 
             var web = new HtmlWeb();
 
@@ -24,13 +25,13 @@ namespace ASPTryParsing.Controllers
                 string details = item.SelectSingleNode(".//a").GetAttributeValue("href", null).Trim();
                 string img = item.SelectSingleNode(".//img").GetAttributeValue("src", null).Trim();
 
-                jobs.Add(new Job()
+                jobs.Add(new News()
                 {
                     Title = title,
                     Details = details,
                     Img = img,
 
-                }); ;
+                }); 
             }
 
             return View(jobs);

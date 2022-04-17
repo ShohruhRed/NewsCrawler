@@ -20,6 +20,7 @@
                    <th>Image</th>
                    <th>Headline</th>
                    <th>Details</th>
+                   <th>Save</th>
                </tr>
            </thead>
            <tbody>
@@ -29,6 +30,9 @@
                         <td><img src="@item.Img" style="width:80px;height:80px"/></td>
                         <td>@item.Title</td>
                         <td><a href="@item.Details">Details</a></td>
+                        <td>
+                            <button class="btn btn-check"></button>
+                        </td>
                     </tr>
                 }
             </tbody>

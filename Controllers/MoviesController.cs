@@ -11,7 +11,7 @@ namespace ASPTryParsing.Controllers
         {
             ServicePointManager.Expect100Continue = true;
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-            List<Job> jobs = new List<Job>();
+            List<News> jobs = new List<News>();
 
             var web = new HtmlWeb();
 
@@ -25,7 +25,7 @@ namespace ASPTryParsing.Controllers
                 string details = "https://www.kinomania.ru/" + item.SelectSingleNode(".//a").GetAttributeValue("href", null).Trim();
                 string img = item.SelectSingleNode(".//img").GetAttributeValue("data-original", null).Trim();
 
-                jobs.Add(new Job()
+                jobs.Add(new News()
                 {
                     Title = title,
                     //Text = text,
