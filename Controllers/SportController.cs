@@ -6,14 +6,13 @@ using System.Net;
 namespace ASPTryParsing.Controllers
 {
     public class SportController : Controller
-    {
-
+    {      
         public IActionResult Index()
         {
             ServicePointManager.Expect100Continue = true;
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             List<News> jobs = new List<News>();
-
+          
             var web = new HtmlWeb();
 
 
@@ -35,6 +34,8 @@ namespace ASPTryParsing.Controllers
             }
 
             return View(jobs);
+
+           
         }
     }
 }
